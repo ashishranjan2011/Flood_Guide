@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <h1>List of people who need help</h1>
+{% if help_list %}
+    <ul>
+    {% for help in help_list %}
+        <li>{{ help_list.no_of_person }}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+    </body>
+</html>
