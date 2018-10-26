@@ -14,5 +14,13 @@
     },
     "is_top_level": true,
     "variables": {}
+  },
+  "cordova-plugin-directions": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-directions"
+    },
+    "is_top_level": true,
+    "variables": {}
   }
 }

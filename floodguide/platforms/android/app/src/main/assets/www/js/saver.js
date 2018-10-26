@@ -23,12 +23,8 @@ var app = {
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
     },
 
-    // deviceready Event Handler
-    //
-    // Bind any cordova events here. Common events are:
-    // 'pause', 'resume', etc.
     onDeviceReady: function() {
-        alert("saver is READY");
+        alert("saver ka pehla page is READY");
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function(position) {
                 var pos = {
@@ -39,7 +35,35 @@ var app = {
                 mylng = pos["lng"];
             });
         }
-        /*var URL="http://192.168.0.16:8000/users/";
+        var id,name;
+        $("#1").click(function() {
+            name=document.getElementById("name").value;
+            $.ajax({
+                type:"POST",  //Request type
+                url: "http://192.168.0.16:8000/saver/",   
+                data:{
+                    "name": name,
+                    "lat": mylat,
+                    "lng": mylng,
+                },
+                cache:false,
+                success:function(result) {
+                    id=result["saver_no"];
+                    //alert(id);
+                    alert("Please click Go Ahead");
+                },
+                error:function(){
+                    alert("error in posting name of saver");
+                }
+            })
+        })
+
+        $("#2").click(function() {
+            alert("aaya on next page");
+            var url="next.html"+"?"+"saver_no="+String(id)+"&name="+String(name);
+            window.location.href = url;
+        })
+/*        var URL="http://192.168.0.16:8000/users/";
         $.getJSON(URL).done( function(data) {
                 for(var x in data){
                     var stlat=x["lat"];
@@ -53,13 +77,34 @@ var app = {
                 }
                 var temp=data[0]["lat"];
                     alert(temp);
+
             }).fail(function() {
                 cordova.plugins.notification.local.schedule({
                             title: 'Network Connection Problem',
                             text: 'Contact your service provider',
                             foreground: true
                 });
-            });*/
+            });
+*/
+            // $.ajax({
+            //         type:"PUT",  //Request type
+            //         url: "http://192.168.0.16:8000/saver/1/",   
+            //         data:{
+            //             "name": "ash",
+            //             "lat": "87",
+            //             "lng": "98",
+            //             "is_free": 1,
+            //             "next_destination": "",
+            //             "saver_no": 1,
+            //         },
+            //         cache:false,
+            //         success:function() {
+            //             alert("success");
+            //         },
+            //         error:function(){
+            //             alert("error");
+            //         }
+            //     })
         /*var temp;
         var URL="http://192.168.0.16:8000/users/";
             $.getJSON(URL).done( function(data) {
@@ -73,19 +118,16 @@ var app = {
                             foreground: true
                 });
             });*/
-        $.ajax({
+        /*$.ajax({
                 type:"DELETE",  //Request type
-                url: "http://192.168.0.16:8000/delete/3",//+String(temp)+"/", 
-                //data: {}  ,
-                //dataType: "json",
-                //contentType: "json",
+                url: "http://192.168.0.16:8000/deletesaver/1/",
                 success:function(){
                     alert("success_saver");
                 },
                 error:function(){
                     alert("error_saver");
                 }
-            })       
+            })    */   
     },
 };
 

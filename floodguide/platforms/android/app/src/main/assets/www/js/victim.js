@@ -40,6 +40,7 @@ var app = {
             });
         }
         $("button").click(function() {
+            var Name=document.getElementById("name").value;
             var count_tot=document.getElementById("totalperson").value;
             var count_vul=document.getElementById("vulnerable").value;
             alert(count_tot);
@@ -47,21 +48,12 @@ var app = {
             alert(mylat);
             alert(mylng);
             var URL="http://192.168.0.16:8000/users/";
-            $.getJSON(URL).done( function(data) {
-                var temp=data[0]["lat"];
-                    alert(temp);
-            }).fail(function() {
-                cordova.plugins.notification.local.schedule({
-                            title: 'Network Connection Problem',
-                            text: 'Contact your service provider',
-                            foreground: true
-                });
-            });
+                
             $.ajax({
                     type:"POST",  //Request type
                     url: URL,   
                     data:{
-                        "name": "Ash",
+                        "name": Name,
                         "lat": mylat,
                         "lng": mylng,
                         "no_of_person": count_tot,

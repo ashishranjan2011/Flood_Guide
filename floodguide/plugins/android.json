@@ -12,6 +12,9 @@
     },
     "cordova-plugin-geolocation": {
       "PACKAGE_NAME": "com.example.flood"
+    },
+    "cordova-plugin-directions": {
+      "PACKAGE_NAME": "com.example.flood"
     }
   },
   "dependent_plugins": {}
