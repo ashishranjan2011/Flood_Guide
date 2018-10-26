@@ -32,7 +32,8 @@ DEBUG = True
 ALLOWED_HOSTS = [
 'localhost',
 '192.168.0.16',
-'searchforu.azurewebsites.net'
+'searchforu.azurewebsites.net',
+'mitanshu000.pythonanywhere.com',
 ]
 
 
@@ -128,3 +129,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
