@@ -26,9 +26,9 @@ var app = {
     },
     
     onDeviceReady: function() { 
-        alert("hey");
+        // alert("hey");
        var query = window.location.search.substring(1);
-       alert(query);
+       // alert(query);
        var vars = query.split("&");
        for (var i=0;i<vars.length;i++) {
                var pair = vars[i].split("=");
@@ -38,7 +38,7 @@ var app = {
 
        $("button").click(function() {
             var URL="http://192.168.0.16:8000/users/"+String(saver_no);
-            alert("click");
+            //alert("click");
             $.getJSON(URL).done( function(data) {
                 var name=data["name"];
                 var req_no=data["req_no"];
@@ -47,10 +47,11 @@ var app = {
                 var lat=data["lat"];
                 var lng=data["lng"];
                 var url="navigator.html?"+"name="+String(name)+"&req_no="+String(req_no)+"&no_of_person="+String(no_of_person)+"&no_of_severe_person="+String(no_of_severe_person)+"&lat="+String(lat)+"&lng="+String(lng)+"&Name="+String(Name)+"&saver_no="+String(saver_no);
-                alert(url);
+                 //alert(url);
                 window.location.href = url;
             }).fail(function() {
-                alert("failed");
+                alert("Error:Check your internet settings");
+                // alert("failed");
             });
 
        })

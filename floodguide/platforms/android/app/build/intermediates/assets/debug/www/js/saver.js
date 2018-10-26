@@ -24,7 +24,7 @@ var app = {
     },
 
     onDeviceReady: function() {
-        alert("saver ka pehla page is READY");
+        // alert("saver ka pehla page is READY");
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function(position) {
                 var pos = {
@@ -49,20 +49,16 @@ var app = {
                 cache:false,
                 success:function(result) {
                     id=result["saver_no"];
-                    //alert(id);
-                    alert("Please click Go Ahead");
+                    var url="next.html"+"?"+"saver_no="+String(id)+"&name="+String(name);
+                    window.location.href = url;
                 },
                 error:function(){
-                    alert("error in posting name of saver");
+                    alert("Error: Check your internet settings");
                 }
             })
         })
 
-        $("#2").click(function() {
-            alert("aaya on next page");
-            var url="next.html"+"?"+"saver_no="+String(id)+"&name="+String(name);
-            window.location.href = url;
-        })
+        
 /*        var URL="http://192.168.0.16:8000/users/";
         $.getJSON(URL).done( function(data) {
                 for(var x in data){

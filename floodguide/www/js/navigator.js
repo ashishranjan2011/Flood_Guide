@@ -12,9 +12,9 @@ var app = {
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
     },
     onDeviceReady: function() { 
-        alert("hey");
+        // alert("hey");
        var query = window.location.search.substring(1);
-       alert(query);
+       // alert(query);
        var vars = query.split("&");
        for (var i=0;i<vars.length;i++) {
                var pair = vars[i].split("=");
@@ -28,8 +28,8 @@ var app = {
                if(pair[0] == "saver_no"){saver_no=pair[1];}
                       
        }
-       alert(req_no);
-       alert(name);
+       // alert(req_no);
+       // alert(name);
        //document.getElementById("display_location").innerHTML="Rescue next!";
        directions.navigateTo(Number(lat),Number(lng));
        $("#cancel").click(function() {
@@ -41,12 +41,12 @@ var app = {
                     },
                     cache:false,
                     success:function() {
-                        alert("success for cancel");
+                        // alert("success for cancel");
                         var url="next.html?"+"Name="+String(Name)+"&saver_no="+String(saver_no);
                         window.location.href = url;
                     },
                     error:function(){
-                        alert("error for cancel");
+                        alert("Error: Redirecting back .. ");
                         var url="next.html?"+"Name="+String(Name)+"&saver_no="+String(saver_no);
                         window.location.href = url;
                     }
@@ -57,12 +57,12 @@ var app = {
                 type:"DELETE",  //Request type
                 url: "http://192.168.0.16:8000/delete/"+String(req_no)+"/",
                 success:function(){
-                    alert("success_delete");
+                    // alert("success_delete");
                     var url="next.html?"+"Name="+String(Name)+"&saver_no="+String(saver_no);
                     window.location.href = url;    
                 },
                 error:function(){
-                    alert("error_delete");
+                    alert("Error: Redirecting back");
                     var url="next.html?"+"Name="+String(Name)+"&saver_no="+String(saver_no);
                     window.location.href = url;    
                 }

@@ -28,7 +28,6 @@ var app = {
     // Bind any cordova events here. Common events are:
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
-        alert("App is READY");
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function(position) {
                 var pos = {
@@ -43,10 +42,10 @@ var app = {
             var Name=document.getElementById("name").value;
             var count_tot=document.getElementById("totalperson").value;
             var count_vul=document.getElementById("vulnerable").value;
-            alert(count_tot);
-            alert(count_vul);
-            alert(mylat);
-            alert(mylng);
+            // alert(count_tot);
+            // alert(count_vul);
+            // alert(mylat);
+            // alert(mylng);
             var URL="http://192.168.0.16:8000/users/";
                 
             $.ajax({
@@ -61,10 +60,10 @@ var app = {
                     },
                     cache:false,
                     success:function() {
-                        alert("success");
+                        window.location.href = "victim_success.html" ;
                     },
                     error:function(){
-                        alert("error");
+                        alert("Error: Check your network settings");
                     }
                 })
         })        
