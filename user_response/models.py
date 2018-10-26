@@ -13,8 +13,8 @@ def default_start_time():
 # Create your models here.
 class User(models.Model):
     name = models.CharField(max_length=100,default="")
-    lat = models.CharField(max_length=100)
-    lng = models.CharField(max_length=100)
+    lat = models.CharField(max_length=100,default="")
+    lng = models.CharField(max_length=100,default="")
     no_of_person=models.IntegerField(default=0)
     timestamp = models.DateTimeField(default=default_start_time())
     no_of_severe_person=models.IntegerField(default=0)
@@ -35,8 +35,8 @@ class User(models.Model):
 
 class Saver(models.Model):
     name = models.CharField(max_length=100,default="")
-    lat = models.CharField(max_length=100)
-    lng = models.CharField(max_length=100)
+    lat = models.CharField(max_length=100,default="")
+    lng = models.CharField(max_length=100,default="")
     is_free = models.IntegerField(default=1)
     # boat_size = models.IntegerField(default=4)
     # timestamp = models.DateTimeField(default=default_start_time())
