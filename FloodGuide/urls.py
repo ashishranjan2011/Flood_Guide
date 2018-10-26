@@ -22,9 +22,15 @@ admin.autodiscover()
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^users/', views.UserList.as_view()),
-    url(r'^users/(?P<pk>[0-9]+)/$', views.UserDetail.as_view()),
+    url(r'^users/$', views.UserList.as_view()),
+    url(r'^users/(?P<pk>\d+)/$', views.UserDetail.as_view()),
     # url(r'^delete/',views.UserDetail.as_view(), name='delete_event'),
     # url(r'^delete$/(?P<pk>\d+)',views.UserDetail.as_view(), name='delete_event'),
      url(r'^delete/(?P<pk>\d+)',views.UserDetail.as_view(), name='delete'),
+     url(r'^deletesaver/(?P<pk>\d+)',views.SaverDetail.as_view(), name='deletesaver'),
+     url(r'^saver/$',views.SaverList.as_view()),
+     url(r'^saver/(?P<pk>\d+)/$',views.SaverDetail.as_view()),
+     url(r'^getuser/(?P<pk>\d+)/$',views.SaverDetail.as_view(), name='getuser'),
+     # url(r'^chngstatus/',views.changestatus,name='chngstatus')
+     # url(r'^edit/(?P<*args>+?P<)
 ]

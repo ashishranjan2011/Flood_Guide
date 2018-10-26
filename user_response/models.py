@@ -19,15 +19,25 @@ class User(models.Model):
     timestamp = models.DateTimeField(default=default_start_time())
     no_of_severe_person=models.IntegerField(default=0)
     req_no = models.AutoField(primary_key=True)
+    pickup=models.IntegerField(default=0)
 
     def __str__(self):
         return self.name
+
+    def chng_pickup(self,x):
+        # if(self.pickup == 1):
+        self.pickup=x
+        # else:
+            # self.pickup = 1
+        self.save()
 # "{} - {}".format(self.lat,self.lng)
+
+
 class Saver(models.Model):
     name = models.CharField(max_length=100,default="")
     lat = models.CharField(max_length=100)
     lng = models.CharField(max_length=100)
-    is_free = models.IntegerField(default=0)
+    is_free = models.IntegerField(default=1)
     # boat_size = models.IntegerField(default=4)
     # timestamp = models.DateTimeField(default=default_start_time())
     # no_of_severe_person=models.IntegerField(default=0)
@@ -36,3 +46,14 @@ class Saver(models.Model):
 
     def __str__(self):
         return self.name
+
+    def destination(self,pk):
+        self.next_destination = str(pk)
+        #     self.pickup=0
+        # else:
+        #     self.pickup = 1
+        self.save()
+
+    def chngfree(self,x):
+        self.is_free = x
+        self.save()
