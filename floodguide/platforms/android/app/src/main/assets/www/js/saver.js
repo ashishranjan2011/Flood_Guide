@@ -40,7 +40,7 @@ var app = {
             name=document.getElementById("name").value;
             $.ajax({
                 type:"POST",  //Request type
-                url: "http://192.168.0.16:8000/saver/",   
+                url: "http://mitnashu000.pythonanywhere.com/saver/",   
                 data:{
                     "name": name,
                     "lat": mylat,

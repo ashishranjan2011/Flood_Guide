@@ -35,7 +35,7 @@ var app = {
        $("#cancel").click(function() {
             $.ajax({
                     type:"PUT",  //Request type
-                    url: "http://192.168.0.16:8000/users/"+String(req_no)+"/",   
+                    url: "http://mitnashu000.pythonanywhere.com/users/"+String(req_no)+"/",   
                     data:{
                       "pickup" : 0,
                     },
@@ -55,7 +55,7 @@ var app = {
        $("#end").click(function() {
             $.ajax({
                 type:"DELETE",  //Request type
-                url: "http://192.168.0.16:8000/delete/"+String(req_no)+"/",
+                url: "http://mitnashu000.pythonanywhere.com/delete/"+String(req_no)+"/",
                 success:function(){
                     // alert("success_delete");
                     var url="next.html?"+"Name="+String(Name)+"&saver_no="+String(saver_no);

@@ -37,7 +37,7 @@ var app = {
        }
 
        $("button").click(function() {
-            var URL="http://192.168.0.16:8000/users/"+String(saver_no);
+            var URL="http://mitnashu000.pythonanywhere.com/users/"+String(saver_no);
             //alert("click");
             $.getJSON(URL).done( function(data) {
                 var name=data["name"];

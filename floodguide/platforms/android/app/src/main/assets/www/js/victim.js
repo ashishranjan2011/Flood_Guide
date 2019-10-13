@@ -46,7 +46,7 @@ var app = {
             // alert(count_vul);
             // alert(mylat);
             // alert(mylng);
-            var URL="http://192.168.0.16:8000/users/";
+            var URL="http://mitnashu000.pythonanywhere.com/users/";
                 
             $.ajax({
                     type:"POST",  //Request type
